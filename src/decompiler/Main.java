@@ -78,7 +78,7 @@ public class Main {
 			
 			FieldInfo field;
 			for(int i = 0;i < fieldCount;i++){
-				field = FieldInfo.readField(f);
+				field = FieldInfo.readField(f,tagProc.constantPool);
 				System.out.println("Printing Fields");
 				System.out.println(String.format("AccessFlag"+"%02x%02x",field.accessFlag[0],field.accessFlag[1]));
 				t = tagProc.get((int)field.nameIndex);
@@ -87,13 +87,36 @@ public class Main {
 				System.out.println("Descriptor: "+t.printTag());
 				for(int j = 0 ;j < field.attributeCount;j++){
 					System.out.println("Attributes");
-					t = tagProc.get((int)field.attributeArray[i].nameIndex);
+					t = tagProc.get((int)field.attributeArray[j].nameIndex);
 					System.out.println("Name: "+t.printTag());
-					String str = new String(field.attributeArray[i].info,StandardCharsets.UTF_8);
-					System.out.println("AttrInfo: "+str);
+					
 				}
 			}
 			
+			byteArr = fileReader.readBytes(f, 2);
+			short methodCount = ByteUtils.byteToShort(byteArr);
+			System.out.println("Method Count:"+methodCount);
+			
+			MethodInfo method;
+			for(int i = 0 ; i < methodCount ;i++){
+				method = MethodInfo.readField(f,tagProc.constantPool);
+				System.out.println("Printing Methods");
+				System.out.println(String.format("AccessFlag"+"%02x%02x",method.accessFlag[0],method.accessFlag[1]));
+				t = tagProc.get((int)method.nameIndex);
+				System.out.println("Name: "+t.printTag());
+				t = tagProc.get((int)method.descriptorIndex);
+				
+				
+				System.out.println("Attributes Count:"+method.attributeCount);
+				System.out.println("Descriptor: "+t.printTag());
+				for(int j = 0 ;j < method.attributeCount;j++){
+					System.out.println("Attributes");
+					t = tagProc.get((int)method.attributeArray[j].nameIndex);
+					System.out.println("Name: "+t.printTag());
+					System.out.println("Length: "+method.attributeArray[j].attributeLength);
+					method.attributeArray[j].cAttr.print(tagProc.constantPool);
+				}
+			}
 			
 			int b;
 			while( (b = f.read())!= -1){

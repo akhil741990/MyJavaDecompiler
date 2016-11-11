@@ -1,7 +1,7 @@
 package decompiler.tag;
 
 public class RefTag extends BasicTag {
-	short index, typeIndex;
+	public short index, typeIndex;
 	
 	public RefTag(){
 		

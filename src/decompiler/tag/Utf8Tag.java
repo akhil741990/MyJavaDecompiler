@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Utf8Tag extends BasicTag {
 	short length;
-	byte [] bytes;
+	 public byte [] bytes;
 	public Utf8Tag(){
 		
 	}

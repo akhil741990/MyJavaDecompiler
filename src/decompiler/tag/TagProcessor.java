@@ -8,7 +8,7 @@ import decompiler.util.ByteUtils;
 
 public class TagProcessor {
 
-	Map<Integer,BasicTag> constantPool;
+	public Map<Integer,BasicTag> constantPool;
 	int counter;
 	public TagProcessor(){
 		constantPool = new HashMap<Integer,BasicTag>();

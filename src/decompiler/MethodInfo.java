@@ -8,12 +8,11 @@ import decompiler.tag.BasicTag;
 import decompiler.util.ByteUtils;
 import decompiler.util.ReadFileBytes;
 
-public class FieldInfo {
-
+public class MethodInfo {
 	short nameIndex,descriptorIndex,attributeCount;
 	byte []accessFlag;
 	AttributeInfo attributeArray[];
-	public FieldInfo(byte [] accessFlag,short nameIndex,short descriptorIndex,short attributeCount){
+	public MethodInfo(byte [] accessFlag,short nameIndex,short descriptorIndex,short attributeCount){
 		this.accessFlag = accessFlag;
 		this.nameIndex = nameIndex;
 		this.descriptorIndex = descriptorIndex;
@@ -22,7 +21,7 @@ public class FieldInfo {
 	}
 
 	
-	public static FieldInfo readField(FileInputStream f, Map<Integer,BasicTag> pool) throws IOException{
+	public static MethodInfo readField(FileInputStream f,Map<Integer,BasicTag> pool) throws IOException{
 		byte [] accessFlag = ReadFileBytes.readBytes(f, 2);
 		byte [] byteArr = ReadFileBytes.readBytes(f, 2);
 		short nameIndex  = ByteUtils.byteToShort(byteArr);
@@ -30,7 +29,7 @@ public class FieldInfo {
 		short descriptorIndex  = ByteUtils.byteToShort(byteArr);
 		byteArr = ReadFileBytes.readBytes(f, 2);
 		short attributeCount  = ByteUtils.byteToShort(byteArr);
-		FieldInfo field = new FieldInfo(accessFlag, nameIndex, descriptorIndex, attributeCount);
+		MethodInfo field = new MethodInfo(accessFlag, nameIndex, descriptorIndex, attributeCount);
 		for (int i = 0; i < attributeCount;i++){
 			AttributeInfo attr = AttributeInfo.readAttributes(f,pool);
 			field.attributeArray[i] = attr;
