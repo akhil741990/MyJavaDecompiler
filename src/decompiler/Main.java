@@ -103,12 +103,18 @@ public class Main {
 				System.out.println("Printing Methods");
 				System.out.println(String.format("AccessFlag"+"%02x%02x",method.accessFlag[0],method.accessFlag[1]));
 				t = tagProc.get((int)method.nameIndex);
-				System.out.println("Name: "+t.printTag());
+				
+				if(t!=null){
+					System.out.println("Name: "+t.printTag());
+				}
 				t = tagProc.get((int)method.descriptorIndex);
 				
 				
 				System.out.println("Attributes Count:"+method.attributeCount);
-				System.out.println("Descriptor: "+t.printTag());
+				
+				if(t!= null){
+					System.out.println("Descriptor: "+t.printTag());
+				}
 				for(int j = 0 ;j < method.attributeCount;j++){
 					System.out.println("Attributes");
 					t = tagProc.get((int)method.attributeArray[j].nameIndex);
@@ -125,6 +131,7 @@ public class Main {
 			f.close();
 		}catch(Exception e){
 			System.out.println(e);
+			e.printStackTrace();
 		}
 		
 	}
