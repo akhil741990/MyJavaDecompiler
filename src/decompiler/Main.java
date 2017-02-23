@@ -104,6 +104,10 @@ public class Main {
 				System.out.println(String.format("AccessFlag"+"%02x%02x",method.accessFlag[0],method.accessFlag[1]));
 				t = tagProc.get((int)method.nameIndex);
 				
+				
+				// Access flag should never be 0 need to find the root cause of this.
+				// 
+				
 				if(t!=null){
 					System.out.println("Name: "+t.printTag());
 				}
