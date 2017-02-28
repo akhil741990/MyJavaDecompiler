@@ -1,0 +1,73 @@
+Starting decompiler
+MagicNumber cafebabe
+Version 00000034
+PoolCount:51
+Index: 1 Tag:10 Index:12 TypeIndex:27
+Index: 2 Tag:10 Index:11 TypeIndex:28
+Index: 3 Tag:9 Index:29 TypeIndex:30
+Index: 4 Tag:7 Index:31
+Index: 5 Tag:10 Index:4 TypeIndex:27
+Index: 6 Tag:8 Index:32
+Index: 7 Tag:10 Index:4 TypeIndex:33
+Index: 8 Tag:10 Index:4 TypeIndex:34
+Index: 9 Tag:10 Index:4 TypeIndex:35
+Index: 10 Tag:10 Index:36 TypeIndex:37
+Index: 11 Tag:7 Index:38
+Index: 12 Tag:7 Index:39
+Index: 13 Tag:1 Length:3 Bytes:sum
+Index: 14 Tag:1 Length:1 Bytes:I
+Index: 15 Tag:1 Length:1 Bytes:a
+Index: 16 Tag:1 Length:1 Bytes:b
+Index: 17 Tag:1 Length:6 Bytes:<init>
+Index: 18 Tag:1 Length:3 Bytes:()V
+Index: 19 Tag:1 Length:4 Bytes:Code
+Index: 20 Tag:1 Length:15 Bytes:LineNumberTable
+Index: 21 Tag:1 Length:4 Bytes:main
+Index: 22 Tag:1 Length:22 Bytes:([Ljava/lang/String;)V
+Index: 23 Tag:1 Length:8 Bytes:printSum
+Index: 24 Tag:1 Length:5 Bytes:(II)V
+Index: 25 Tag:1 Length:10 Bytes:SourceFile
+Index: 26 Tag:1 Length:9 Bytes:Test.java
+Index: 27 Tag:12 Index:17 TypeIndex:18
+Index: 28 Tag:12 Index:23 TypeIndex:24
+Index: 29 Tag:7 Index:40
+Index: 30 Tag:12 Index:41 TypeIndex:42
+Index: 31 Tag:1 Length:23 Bytes:java/lang/StringBuilder
+Index: 32 Tag:1 Length:5 Bytes:Sum =
+Index: 33 Tag:12 Index:43 TypeIndex:44
+Index: 34 Tag:12 Index:43 TypeIndex:45
+Index: 35 Tag:12 Index:46 TypeIndex:47
+Index: 36 Tag:7 Index:48
+Index: 37 Tag:12 Index:49 TypeIndex:50
+Index: 38 Tag:1 Length:15 Bytes:decompiler/Test
+Index: 39 Tag:1 Length:16 Bytes:java/lang/Object
+Index: 40 Tag:1 Length:16 Bytes:java/lang/System
+Index: 41 Tag:1 Length:3 Bytes:out
+Index: 42 Tag:1 Length:21 Bytes:Ljava/io/PrintStream;
+Index: 43 Tag:1 Length:6 Bytes:append
+Index: 44 Tag:1 Length:45 Bytes:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+Index: 45 Tag:1 Length:28 Bytes:(I)Ljava/lang/StringBuilder;
+Index: 46 Tag:1 Length:8 Bytes:toString
+Index: 47 Tag:1 Length:20 Bytes:()Ljava/lang/String;
+Index: 48 Tag:1 Length:19 Bytes:java/io/PrintStream
+Index: 49 Tag:1 Length:7 Bytes:println
+Index: 50 Tag:1 Length:21 Bytes:(Ljava/lang/String;)V
+AccessFlag0021
+thisClassIndex:11
+ThisClass:Tag:1 Length:15 Bytes:decompiler/Test
+SuperClassIndex:12
+SuperClass:Tag:1 Length:16 Bytes:java/lang/Object
+Interface Count:0
+Field Count:3
+Printing Fields
+AccessFlag0002
+FieldName: Tag:1 Length:3 Bytes:sum
+Descriptor: Tag:1 Length:1 Bytes:I
+Printing Fields
+AccessFlag0008
+FieldName: Tag:1 Length:1 Bytes:a
+Descriptor: Tag:1 Length:1 Bytes:I
+Printing Fields
+AccessFlag0008
+FieldName: Tag:1 Length:1 Bytes:b
+Descriptor: Tag:1 Length:1 Bytes:I
