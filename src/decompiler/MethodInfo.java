@@ -29,6 +29,12 @@ public class MethodInfo {
 		short descriptorIndex  = ByteUtils.byteToShort(byteArr);
 		byteArr = ReadFileBytes.readBytes(f, 2);
 		short attributeCount  = ByteUtils.byteToShort(byteArr);
+		
+		
+		if(ByteUtils.byteToShort(accessFlag) == 0){
+			return null;
+		}
+		
 		MethodInfo field = new MethodInfo(accessFlag, nameIndex, descriptorIndex, attributeCount);
 		for (int i = 0; i < attributeCount;i++){
 			AttributeInfo attr = AttributeInfo.readAttributes(f,pool);

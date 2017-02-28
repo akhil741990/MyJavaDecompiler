@@ -100,6 +100,10 @@ public class Main {
 			MethodInfo method;
 			for(int i = 0 ; i < methodCount ;i++){
 				method = MethodInfo.readField(f,tagProc.constantPool);
+				
+				if(method == null){
+					continue;
+				}
 				System.out.println("Printing Methods");
 				System.out.println(String.format("AccessFlag"+"%02x%02x",method.accessFlag[0],method.accessFlag[1]));
 				t = tagProc.get((int)method.nameIndex);

@@ -71,3 +71,26 @@ Printing Fields
 AccessFlag0008
 FieldName: Tag:1 Length:1 Bytes:b
 Descriptor: Tag:1 Length:1 Bytes:I
+Method Count:3
+utf8                   00000000000000000000              
+Code                   00000000000000000000              
+@@@@@@@@@@@@@@@@@@@ Print Counter:110860
+Printing Methods
+AccessFlag0001
+Name: Tag:1 Length:6 Bytes:<init>
+Attributes Count:1
+Descriptor: Tag:1 Length:3 Bytes:()V
+Attributes
+Name: Tag:1 Length:4 Bytes:Code
+Length: 29
+Printing CodeAttribute
+ClassName:Tag:1 Length:16 Bytes:java/lang/Object
+Name:Tag:1 Length:6 Bytes:<init>
+Descriptor:Tag:1 Length:3 Bytes:()V
+AttrLen:0
+MaxStack:5
+MaxLocals:10935
+Printing Byte Code
+ExpTableLength:0
+Printing expTable
+AtttributeCount:0
