@@ -133,8 +133,9 @@ public class Main {
 			}
 			
 			int b;
+			System.out.println("Unparsed");
 			while( (b = f.read())!= -1){
-				//System.out.println(Integer.toHexString(b));
+				System.out.println(Integer.toHexString(b));
 			}
 			f.close();
 		}catch(Exception e){
