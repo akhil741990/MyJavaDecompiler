@@ -17,7 +17,7 @@ public class Main {
 		try{
 		
 			ReadFileBytes fileReader = new  ReadFileBytes();
-			FileInputStream f = new FileInputStream("D:\\Java\\JavaProblems\\src\\decompiler\\Test.class");
+			FileInputStream f = new FileInputStream("D:\\Java\\MyJavaDecompiler\\test\\NewContentFetcher.class");
 			byte[] bytes = fileReader.readBytes(f,4);
 			System.out.println(String.format("MagicNumber "+"%02x%02x%02x%02x", bytes[0],bytes[1],bytes[2],bytes[3]));
 			byte[] version = fileReader.readBytes(f, 4);
@@ -82,13 +82,22 @@ public class Main {
 				System.out.println("Printing Fields");
 				System.out.println(String.format("AccessFlag"+"%02x%02x",field.accessFlag[0],field.accessFlag[1]));
 				t = tagProc.get((int)field.nameIndex);
-				System.out.println("FieldName: "+t.printTag());
+				if(t!=null){
+					System.out.println("FieldName: "+t.printTag());
+				}
+				
 				t = tagProc.get((int)field.descriptorIndex);
-				System.out.println("Descriptor: "+t.printTag());
+				if(t!=null){
+					System.out.println("Descriptor: "+t.printTag());
+				}
+			
 				for(int j = 0 ;j < field.attributeCount;j++){
 					System.out.println("Attributes");
-					t = tagProc.get((int)field.attributeArray[j].nameIndex);
-					System.out.println("Name: "+t.printTag());
+					if(field.attributeArray[j]!=null){
+						t = tagProc.get((int)field.attributeArray[j].nameIndex);
+						System.out.println("Name: "+t.printTag());
+					}
+					
 					
 				}
 			}

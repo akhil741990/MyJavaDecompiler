@@ -33,7 +33,9 @@ public class FieldInfo {
 		FieldInfo field = new FieldInfo(accessFlag, nameIndex, descriptorIndex, attributeCount);
 		for (int i = 0; i < attributeCount;i++){
 			AttributeInfo attr = AttributeInfo.readAttributes(f,pool);
-			field.attributeArray[i] = attr;
+			if(attr!=null){
+				field.attributeArray[i] = attr;
+			}
 		}
 		return field;
 		
